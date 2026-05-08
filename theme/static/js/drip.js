@@ -6,16 +6,12 @@ function spawnDrip(el) {
   const randomBound = el.dataset.dripCount ? parseInt(el.dataset.dripCount) : 2;
 
   const count = Math.floor(Math.random() * randomBound) + 1;
-  console.log("Spawning a drip: " + count);
   const scrollX = window.scrollX || document.documentElement.scrollLeft;
   const containerOffset = Math.abs(
     parseFloat(
       getComputedStyle(document.querySelector(".liquid-container")).left
       )
     );
-
-  console.log("scrollX: " + scrollX);
-  console.log("containerOffset: " + containerOffset)
 
   for (let i = 0; i < count; i++) {
     const drip = document.createElement("div");
