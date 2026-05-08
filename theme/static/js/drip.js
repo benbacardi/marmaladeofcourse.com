@@ -26,8 +26,8 @@ function spawnDrip(el) {
     containerOffset;
     const dist = Math.random() * 5 + 12;
 
-    drip.style.width = `${size}px`;
-    drip.style.height = `${size}px`;
+    drip.style.width = `calc(${size}px * var(--drip-size))`;
+    drip.style.height = `calc(${size}px * var(--drip-size))`;
     drip.style.left = `${x}px`;
     drip.style.setProperty("--dist", `${dist}px`);
 

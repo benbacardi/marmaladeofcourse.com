@@ -6,6 +6,7 @@
   --marmalade: 232, 121, 48;
   --blur-radius: 20px;
   --_hypercard-scale: 1.1;
+  --drip-size: 1;
 }
 
 body {
@@ -280,6 +281,11 @@ header nav a:hover em {
 }
 
 @media (max-width: 800px) {
+
+  :root {
+    --drip-size: 0;
+  }
+
   header nav {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -442,17 +448,6 @@ footer ul {
 .drip.retracting {
   transform: scale(0) translateY(-15px) !important;
   opacity: 0;
-}
-
-/* Footer */
-
-.footer {
-  height: 2px;
-  background-color: rgb(var(--marmalade));
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 /* Almanac */
