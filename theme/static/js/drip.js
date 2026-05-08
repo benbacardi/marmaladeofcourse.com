@@ -18,7 +18,6 @@ function spawnDrip(el) {
     drip.classList.add("drip");
 
     const size = Math.random() * 8 + 22;
-// Adjusting X position to account for the container's negative left offset
     const x =
     rect.left +
     scrollX +
@@ -38,7 +37,6 @@ function spawnDrip(el) {
 }
 
 function killDrip(el) {
-  console.log("Killing drips");
   const drips = liquidBox.querySelectorAll(".drip");
   drips.forEach((d) => {
     if (d.dataset.owner === el.innerText) {
