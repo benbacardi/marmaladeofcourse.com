@@ -1,0 +1,11 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+Gemfile
+Gemfile.lock
+.bundle
+.DS_Store
+__pycache__
+output

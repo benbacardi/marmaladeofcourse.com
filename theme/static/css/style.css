@@ -1,0 +1,433 @@
+:root {
+  --header-background-color: 252, 247, 242;
+  --background-color: 253, 251, 249;
+  --border-color: 236, 218, 198;
+  --body-color: 28, 27, 26;
+  --marmalade: 232, 121, 48;
+  --blur-radius: 20px;
+  --_hypercard-scale: 1.1;
+}
+
+body {
+  background-color: rgb(var(--background-color));
+  font-family: Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  font-weight: normal;
+}
+
+/* Typography */
+
+a {
+  color: rgb(var(--marmalade));
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+  color: rgb(var(--body-color));
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.post h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+.post h2 { font-size: 1.4rem; }
+.post h3, .post h4, .post h5, .post h6 { font-size: 1.2rem; }
+
+.post .metadata {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.post .metadata a {
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.post .metadata a:first-child {
+  margin-left: 0;
+}
+
+.post .metadata a:hover {
+  text-decoration: underline;
+}
+
+.post .timestamp a {
+  text-decoration: none;
+  color: rgb(var(--body-color));
+  font-style: italic;
+}
+
+.post .timestamp a:hover {
+  color: rgb(var(--marmalade));
+  opacity: 1;
+}
+
+.pagination a {
+  text-decoration: none;
+}
+
+/* Basics */
+
+hr {
+  color: inherit;
+  border: 0;
+  margin: 1rem 0;
+  border-top: 1px dashed rgb(var(--border-color));
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p, pre, ul, ol, blockquote {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.post blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+a.headerlink {
+  margin-left: 5px;
+  color: rgb(var(--marmalade));
+  opacity: 0;
+}
+
+h1:hover a.headerlink, h2:hover a.headerlink, h3:hover a.headerlink, h4:hover a.headerlink, h5:hover a.headerlink, h6:hover a.headerlink {
+  opacity: 0.5;
+}
+
+.text-muted {
+  opacity: 0.5;
+}
+
+/* Layout */
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.post, .pagination {
+  max-width: 720px;
+  margin-bottom: 5rem;
+}
+
+.post .timestamp {
+  margin-top: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.post .timestamp hr {
+  margin: 1rem 0;
+  width: 4rem;
+  border-top: 1px dashed rgb(var(--marmalade));
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed rgb(var(--border-color));
+  padding-top: 2rem;
+}
+
+/* Code */
+
+pre {
+  display: block;
+  padding: 1rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: rgb(var(--header-background-color));
+  border-radius: 5px;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+.highlight .hll {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 6px;
+  background-color: rgb(248, 222, 206);
+}
+
+/* Page layout */
+
+.page h1 {
+  margin-bottom: 1rem;
+}
+
+.page h3, .page h2 {
+  font-size: 1.6rem;
+  color: rgb(var(--marmalade));
+  border-bottom: 1px dashed rgb(var(--marmalade));
+  margin-top: 2rem;
+}
+
+.page h2 small {
+  color: rgb(var(--body-color));
+  float: right;
+  opacity: 0.5;
+}
+
+.page ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page ul li a {
+  color: rgb(var(--body-color));
+  text-decoration: none;
+}
+
+.page ul li a:hover {
+  color: rgb(var(--marmalade));
+}
+
+.page ul li span {
+  float: right;
+}
+
+.post-date {
+  opacity: 0.5;
+  font-style: italic;
+}
+
+/* Header */
+
+header {
+  border-bottom: 1px solid rgb(var(--border-color));
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+header nav {
+  display: flex;
+  align-items: end;
+}
+
+header nav h1 {
+  margin-bottom: 0;
+  margin-right: auto;
+  z-index: 20;
+}
+
+header nav h1 a {
+  color: rgb(var(--body-color));
+  text-decoration: none;
+  display: block;
+  padding: 0.8rem 0;
+}
+
+header nav h1 a em {
+  color: rgb(var(--marmalade));
+  font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+}
+
+header nav > a {
+  padding: 1.2rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(var(--body-color));
+  letter-spacing: 2px;
+  font-weight: 500;
+  z-index: 20;
+}
+
+header nav > a:last-child {
+  padding-right: 0;
+}
+
+header nav a:hover, header nav a.active {
+  color: rgb(var(--marmalade));
+}
+
+header nav a:hover {
+  text-decoration: none;
+}
+
+header nav a:hover em {
+  color: rgb(var(--body-color));
+}
+
+/* Container for the liquid effect */
+
+.liquid-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  background-color: #fcf7f2;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%23ecdac6' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.liquid-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.liquid-filter-wrapper {
+  filter: url("#marmalade-filter");
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.liquid-base {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(var(--marmalade));
+}
+
+.drip {
+  position: absolute;
+  background-color: rgb(var(--marmalade));
+  border-radius: 50%;
+  top: calc(100% - 12px);
+  transform-origin: center top;
+  animation: drip-emerge 0.4s cubic-bezier(0.2, 0, 0.3, 1.4) forwards;
+  transition: all 0.3s ease-in;
+}
+
+@keyframes drip-emerge {
+  0% {
+    transform: scale(0) translateY(0);
+  }
+  100% {
+    transform: scale(1) translateY(var(--dist));
+  }
+}
+
+.drip.retracting {
+  transform: scale(0) translateY(-15px) !important;
+  opacity: 0;
+}
+
+/* Footer */
+
+.footer {
+  height: 2px;
+  background-color: rgb(var(--marmalade));
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Almanac */
+
+.almanac-page {
+  max-width: initial;
+}
+
+.almanac {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0.2rem;
+}
+
+.almanac > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  aspect-ratio: 1 / 1.5;
+  background-color: rgba(var(--marmalade), 0.1);
+  background-position: 50% 0;
+  overflow: hidden;
+}
+
+.almanac h3 {
+  background-color: rgb(var(--marmalade));
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 2.5rem;
+  line-height: 1;
+  border-radius: 3px;
+}
+
+.almanac h3 small {
+  font-size: 1.2rem;
+  opacity: 0.4;
+}
+
+.almanac .title {
+  padding: 1rem;
+}
+
+.almanac .event {
+  transition-duration: 150ms;
+  transition-property: transform, box-shadow;
+  transition-timing-function: ease-out;
+  transform: rotate3d(0);
+  border-radius: 3px;
+}
+
+.almanac .event:hover {
+  transform: scale3d(var(--_hypercard-scale), var(--_hypercard-scale), var(--_hypercard-scale));
+  box-shadow: 0 5px 20px 5px #00000044;
+}
+
+.almanac .event.has-image .title {
+  opacity: 0;
+    /*transition-duration: 150ms;
+    transition-property: opacity;
+    transition-timing-function: ease-out;*/
+  }
+
+  .almanac .event.has-image:hover .title {
+/*    opacity: 1;*/
+}
+
+@media (max-width: 1200px) {
+  .almanac {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .almanac {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

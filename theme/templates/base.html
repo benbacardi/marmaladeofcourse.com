@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <title>{% block title %}{{ SITENAME }}{% endblock %} • {{ SITENAME }}</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Ben Cardy">
+
+  {% block head %}{% endblock %}
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <link rel="stylesheet" href="{{ SITEURL }}/css/reset.css">
+    <link rel="stylesheet" href="{{ SITEURL }}/css/syntax.css?v=20230217">
+    <link rel="stylesheet" href="{{ SITEURL }}/css/style.css?v=20250902">
+
+<!-- RSS -->
+<link rel="alternate" type="application/atom+xml" title="RSS" href="/feed.xml">
+
+</head>
+
+
+<body>
+
+  <header>
+    <nav class="container">
+      <h1><a href="{{ SITEURL }}/" onmouseenter="spawnDrip(this)" onmouseleave="killDrip(this)" data-drip-count="5">Marmalade, <em>of course</em></a></h1>
+      <a href="{{ ARCHIVES_URL }}" class="{% if "archive" in output_file %}active{% endif %}" onmouseenter="spawnDrip(this)" onmouseleave="killDrip(this)">Archive</a>
+      <a href="{{ CATEGORIES_URL }}" class="{% if "categories" in output_file %}active{% endif %}" onmouseenter="spawnDrip(this)" onmouseleave="killDrip(this)">Categories</a>
+      <a href="{{ TAGS_URL }}" class="{% if "tags" in output_file %}active{% endif %}" onmouseenter="spawnDrip(this)" onmouseleave="killDrip(this)">Tags</a>
+      <a href="/shows/" class="{% if output_file.startswith("shows/") %}active{% endif %}" onmouseenter="spawnDrip(this)" onmouseleave="killDrip(this)">Shows</a>
+    </nav>
+    <div class="liquid-container">
+      <div class="liquid-filter-wrapper" id="liquid-box">
+        <div class="liquid-base"></div>
+      </div>
+    </div>
+    <svg style="display: none;">
+      <defs>
+        <filter id="marmalade-filter">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10" result="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <div class="liquid-cover"></div>
+  </header>
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+  <div class="footer"><a rel="me" href="https://snailedit.social/@benbacardi"></a></div>
+
+  <script src="{{ SITEURL }}/js/drip.js"></script>
+
+  </body>
+</html>
