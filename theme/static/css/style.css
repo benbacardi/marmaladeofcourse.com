@@ -126,7 +126,7 @@ h1:hover a.headerlink, h2:hover a.headerlink, h3:hover a.headerlink, h4:hover a.
 
 .container {
   position: relative;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -322,6 +322,7 @@ footer .quote {
   font-size: 1.2rem;
   margin: 1rem 0;
   line-height: 1.2;
+  flex-shrink: 0;
 }
 
 footer .quote em {
@@ -346,6 +347,17 @@ footer .copyright {
   opacity: 0.6;
   font-size: 1rem;
   align-self: end;
+  flex-shrink: 0;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0 3rem;
+  padding: 0;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  gap: 2rem;
 }
 
 @media (max-width: 800px) {
@@ -358,6 +370,15 @@ footer .copyright {
   footer .quote {
     text-align: center;
     align-self: center;
+  }
+
+  footer .copyright {
+    align-self: center;
+    margin-top: 1rem;
+  }
+  footer ul {
+    margin: 0;
+    justify-content: center;
   }
 }
 

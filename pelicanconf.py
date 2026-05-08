@@ -50,4 +50,7 @@ MARKDOWN = {
 }
 
 import yaml
+from datetime import datetime
+
 ALMANAC = yaml.safe_load(open("almanac.yml").read())
+CURRENT_YEAR = datetime.now().year
