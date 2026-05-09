@@ -492,8 +492,12 @@ footer ul {
 }
 
 @supports (font: -apple-system-body) {
+  :root {
+    --drip-size: 1.5;
+  }
   .drip {
-    display: none;
+    animation: none;
+    transition: none;
   }
 }
 
