@@ -17,6 +17,12 @@ body {
 
 /* Typography */
 
+.handwritten {
+  font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
+  font-weight: normal;
+  color: rgb(var(--marmalade));
+}
+
 a {
   color: rgb(var(--marmalade));
 }
@@ -174,6 +180,20 @@ h1:hover a.headerlink, h2:hover a.headerlink, h3:hover a.headerlink, h4:hover a.
   justify-content: space-between;
   border-top: 1px dashed rgb(var(--border-color));
   padding-top: 2rem;
+}
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
 }
 
 /* Code */
