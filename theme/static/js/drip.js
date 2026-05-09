@@ -1,29 +1,22 @@
 const liquidBox = document.getElementById("liquid-box");
 
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 function spawnDrip(el) {
   const rect = el.getBoundingClientRect();
 
   const randomBound = el.dataset.dripCount ? parseInt(el.dataset.dripCount) : 2;
 
   const count = Math.floor(Math.random() * randomBound) + 1;
-  const scrollX = window.scrollX || document.documentElement.scrollLeft;
-  const containerOffset = Math.abs(
-    parseFloat(
-      getComputedStyle(document.querySelector(".liquid-container")).left
-      )
-    );
 
   for (let i = 0; i < count; i++) {
     const drip = document.createElement("div");
     drip.classList.add("drip");
 
     const size = Math.random() * 8 + 22;
-    const x =
-    rect.left +
-    scrollX +
-    Math.random() * (rect.width * 0.4) +
-    rect.width * 0.3 +
-    containerOffset;
+    const x = getRandomArbitrary(rect.left, rect.right - size);
     const dist = Math.random() * 5 + 12;
 
     drip.style.width = `calc(${size}px * var(--drip-size))`;

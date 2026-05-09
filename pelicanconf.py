@@ -50,7 +50,20 @@ MARKDOWN = {
 }
 
 import yaml
+import hashlib
 from datetime import datetime
 
 ALMANAC = yaml.safe_load(open("almanac.yml").read())
 CURRENT_YEAR = datetime.now().year
+
+
+def file_hash(filename):
+    return hashlib.md5(open(filename, "rb").read()).hexdigest()
+
+
+STATIC_MANIFEST = {
+    "reset.css": file_hash("theme/static/css/reset.css"),
+    "syntax.css": file_hash("theme/static/css/syntax.css"),
+    "style.css": file_hash("theme/static/css/style.css"),
+    "drip.js": file_hash("theme/static/js/drip.js"),
+}

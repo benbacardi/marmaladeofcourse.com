@@ -13,9 +13,9 @@
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/syntax.css?v=20230217">
-    <link rel="stylesheet" href="/css/style.css?v=20250902">
+    <link rel="stylesheet" href="/css/reset.css?v={{ STATIC_MANIFEST["reset.css"] }}">
+    <link rel="stylesheet" href="/css/syntax.css?v={{ STATIC_MANIFEST["syntax.css"] }}">
+    <link rel="stylesheet" href="/css/style.css?v={{ STATIC_MANIFEST["style.css"] }}">
 
 <!-- RSS -->
 <link rel="alternate" type="application/atom+xml" title="RSS" href="/feed.xml">
@@ -80,7 +80,7 @@
 
   <div class="footer"><a rel="me" href="https://snailedit.social/@benbacardi"></a></div>
 
-  <script src="/js/drip.js"></script>
+  <script src="/js/drip.js?v={{ STATIC_MANIFEST["drip.js"] }}"></script>
 
   </body>
 </html>
