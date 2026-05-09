@@ -329,15 +329,25 @@ header nav a:hover em {
 
   header nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   header nav h1 {
-    grid-area: 1 / 1 / 2 / 3;
+    grid-area: 1 / 1 / 2 / 4;
+    border-bottom: 1px solid rgb(var(--border-color));
+    width: 100%;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  header nav h1 a {
+    text-align: center;
+    /*padding-bottom: 0;*/
   }
 
   header nav > a {
-    padding: 0.5rem 0;
+    text-align: center;
+    padding: 0rem 0 0.5rem 0;
   }
 }
 
