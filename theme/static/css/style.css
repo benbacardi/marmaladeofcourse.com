@@ -78,6 +78,27 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
   text-decoration: none;
 }
 
+blockquote {
+    padding: 0.5rem 1rem;
+    color: #7a7a7a;
+    border-left: 0.2rem solid rgb(var(--marmalade));
+}
+
+.post blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.post p code {
+  color: rgb(var(--marmalade));
+}
+
+.post h2 code, .post h3 code, .post h4 code, .post h5 code, .post h6 code {
+    color: rgb(var(--body-color));
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    font-size: 80%;
+}
+
 /* Basics */
 
 hr {
@@ -448,6 +469,12 @@ footer ul {
 .drip.retracting {
   transform: scale(0) translateY(-15px) !important;
   opacity: 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .drip {
+    display: none;
+  }
 }
 
 /* Almanac */
