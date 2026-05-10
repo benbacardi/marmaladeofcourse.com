@@ -348,6 +348,8 @@ header nav a:hover em {
   header nav > a {
     text-align: center;
     padding: 0rem 0 0.5rem 0;
+    font-weight: 600;
+    font-size: 0.8rem;
   }
 }
 
