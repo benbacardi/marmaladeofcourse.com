@@ -27,18 +27,33 @@ a {
   color: rgb(var(--marmalade));
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
   font-weight: normal;
   margin-bottom: 0.5rem;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   text-decoration: none;
   color: rgb(var(--body-color));
 }
 
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
   text-decoration: none;
   opacity: 0.8;
 }
@@ -46,10 +61,27 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 .post h1 {
   font-size: 3rem;
   line-height: 1.1;
+  text-wrap: pretty;
 }
 
-.post h2 { font-size: 1.4rem; }
-.post h3, .post h4, .post h5, .post h6 { font-size: 1.2rem; }
+.post h1 svg {
+  width: 2.6rem;
+  height: 2.6rem;
+  vertical-align: bottom;
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.post h2 {
+  font-size: 1.4rem;
+}
+
+.post h3,
+.post h4,
+.post h5,
+.post h6 {
+  font-size: 1.2rem;
+}
 
 .post .metadata {
   text-transform: uppercase;
@@ -85,24 +117,28 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
 }
 
 blockquote {
-    padding: 0.5rem 1rem;
-    color: #7a7a7a;
-    border-left: 0.2rem solid rgb(var(--marmalade));
+  padding: 0.5rem 1rem;
+  color: #7a7a7a;
+  border-left: 0.2rem solid rgb(var(--marmalade));
 }
 
 .post blockquote p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .post p code {
   color: rgb(var(--marmalade));
 }
 
-.post h2 code, .post h3 code, .post h4 code, .post h5 code, .post h6 code {
-    color: rgb(var(--body-color));
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-    font-size: 80%;
+.post h2 code,
+.post h3 code,
+.post h4 code,
+.post h5 code,
+.post h6 code {
+  color: rgb(var(--body-color));
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  font-size: 80%;
 }
 
 /* Basics */
@@ -122,7 +158,11 @@ a:hover {
   text-decoration: underline;
 }
 
-p, pre, ul, ol, blockquote {
+p,
+pre,
+ul,
+ol,
+blockquote {
   margin-top: 0;
   margin-bottom: 1rem;
 }
@@ -142,7 +182,12 @@ a.headerlink {
   opacity: 0;
 }
 
-h1:hover a.headerlink, h2:hover a.headerlink, h3:hover a.headerlink, h4:hover a.headerlink, h5:hover a.headerlink, h6:hover a.headerlink {
+h1:hover a.headerlink,
+h2:hover a.headerlink,
+h3:hover a.headerlink,
+h4:hover a.headerlink,
+h5:hover a.headerlink,
+h6:hover a.headerlink {
   opacity: 0.5;
 }
 
@@ -159,7 +204,8 @@ h1:hover a.headerlink, h2:hover a.headerlink, h3:hover a.headerlink, h4:hover a.
   padding: 0 1rem;
 }
 
-.post, .pagination {
+.post,
+.pagination {
   max-width: 720px;
   margin-bottom: 5rem;
 }
@@ -182,16 +228,20 @@ h1:hover a.headerlink, h2:hover a.headerlink, h3:hover a.headerlink, h4:hover a.
   padding-top: 2rem;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
+
 body {
   display: flex;
   flex-direction: column;
 }
+
 .content {
   flex: 1 0 auto;
 }
+
 footer {
   flex-shrink: 0;
 }
@@ -228,7 +278,8 @@ pre code {
   margin-bottom: 1rem;
 }
 
-.page h3, .page h2 {
+.page h3,
+.page h2 {
   font-size: 1.6rem;
   color: rgb(var(--marmalade));
   border-bottom: 1px dashed rgb(var(--marmalade));
@@ -295,7 +346,7 @@ header nav h1 a em {
   font-family: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursive;
 }
 
-header nav > a {
+header nav>a {
   padding: 1.2rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -305,11 +356,12 @@ header nav > a {
   z-index: 20;
 }
 
-header nav > a:last-child {
+header nav>a:last-child {
   padding-right: 0;
 }
 
-header nav a:hover, header nav a.active {
+header nav a:hover,
+header nav a.active {
   color: rgb(var(--marmalade));
 }
 
@@ -345,7 +397,7 @@ header nav a:hover em {
     /*padding-bottom: 0;*/
   }
 
-  header nav > a {
+  header nav>a {
     text-align: center;
     padding: 0rem 0 0.5rem 0;
     font-weight: 600;
@@ -353,7 +405,8 @@ header nav a:hover em {
   }
 }
 
-footer, .liquid-cover {
+footer,
+.liquid-cover {
   background-color: rgb(var(--header-background-color));
   background-color: #fcf7f2;
   background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 10 12c1.67 0 3.182-.683 4.27-1.785A5.998 5.998 0 0 0 14 12h2a4 4 0 0 1 4-4V6c-1.67 0-3.182.683-4.27 1.785C15.905 7.22 16 6.622 16 6c0-.622-.095-1.221-.27-1.785A5.982 5.982 0 0 0 20 6V4a4 4 0 0 1-4-4h-2c0 .622.095 1.221.27 1.785A5.982 5.982 0 0 0 10 0C8.33 0 6.818.683 5.73 1.785 5.905 1.22 6 .622 6 0H4a4 4 0 0 1-4 4v2c1.67 0 3.182.683 4.27 1.785A5.998 5.998 0 0 1 4 6c0-.622.095-1.221.27-1.785A5.982 5.982 0 0 1 0 6v2a4 4 0 0 1 4 4h2zm-4 0a2 2 0 0 0-2-2v2h2zm16 0a2 2 0 0 1 2-2v2h-2zM0 2a2 2 0 0 0 2-2H0v2zm20 0a2 2 0 0 1-2-2h2v2zm-10 8a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' fill='%23ecdac6' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
@@ -426,6 +479,7 @@ footer ul {
     padding-top: 0;
     padding-bottom: 1rem;
   }
+
   footer .quote {
     text-align: center;
     align-self: center;
@@ -435,6 +489,7 @@ footer ul {
     align-self: center;
     margin-top: 1rem;
   }
+
   footer ul {
     margin: 0;
     justify-content: center;
@@ -493,6 +548,7 @@ footer ul {
   0% {
     transform: scale(0) translateY(0);
   }
+
   100% {
     transform: scale(1) translateY(var(--dist));
   }
@@ -507,6 +563,7 @@ footer ul {
   :root {
     --drip-size: 1.5;
   }
+
   .drip {
     animation: none;
     transition: none;
@@ -525,7 +582,7 @@ footer ul {
   gap: 0.2rem;
 }
 
-.almanac > * {
+.almanac>* {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -571,13 +628,13 @@ footer ul {
 
 .almanac .event.has-image .title {
   opacity: 0;
-    /*transition-duration: 150ms;
+  /*transition-duration: 150ms;
     transition-property: opacity;
     transition-timing-function: ease-out;*/
-  }
+}
 
-  .almanac .event.has-image:hover .title {
-/*    opacity: 1;*/
+.almanac .event.has-image:hover .title {
+  /*    opacity: 1;*/
 }
 
 @media (max-width: 1200px) {
