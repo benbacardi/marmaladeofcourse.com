@@ -1,7 +1,7 @@
 title: Pendulum 1.18 Released
 category: Development
 tags: Swift, SwiftUI, Apps
-image: /assets/pendulum-1118.png
+image: /assets/pendulum-1.18.png
 
 A new version of [Pendulum](/pendulum) is out—version 1.18 is now available in the App Store! This brings with it one main feature: custom stationery.
 
