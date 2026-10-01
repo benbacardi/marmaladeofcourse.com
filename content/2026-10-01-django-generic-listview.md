@@ -1,7 +1,6 @@
 title: Django's Generic Views: ListView
 category: Development
 tags: Python, Django
-status: draft
 
 Django's class-based views are very divisive; some people swear by them, others won't touch them with a barge pole and will stick entirely to function-based views. I'm not going to weigh in on that debate, but one thing I do think is that Django's documentation around their *generic* class-based views is not particularly great. There are no tutorials that show you how to use them, and only [reference pages that list some of their properties](https://docs.djangoproject.com/en/6.1/ref/class-based-views/generic-display/#listview) without any real guidance on what they do.
 
@@ -55,6 +54,8 @@ class PostList(ListView):
     context_object_name = "posts"
 ```
 
+Without this, the list is available as either `object_list` or `post_list` (the second derived from the model name).
+
 ### I need the posts to appear with the most recent first! {#ordering}
 
 Define what order is used by the `QuerySet`:
@@ -71,22 +72,22 @@ class PostList(ListView):
 
 Specify the base `QuerySet` that `ListView` is using:
 
-```python hl_lines="6"
+```python hl_lines="5"
 class PostList(ListView):
-    model = Post
     template_name = "all_posts.html"
     context_object_name = "posts"
     ordering = "-published_at"
     queryset = Post.objects.exclude(published_at__isnull=True)
 ```
 
+Notice that we don't need to specify the `model` anymore.
+
 ### What if I want to also exclude posts that have been set to publish in the future? {#get-queryset}
 
 You can't do that with a class attribute (fetching the current time requires some runtime code, not compile-time code), but the `ListView` still has you covered:
 
-```python hl_lines="6 7 8"
+```python hl_lines="5 6 7"
 class PostList(ListView):
-    model = Post
     template_name = "all_posts.html"
     context_object_name = "posts"
     
@@ -101,9 +102,8 @@ class PostList(ListView):
 
 Add pagination:
 
-```python hl_lines="5"
+```python hl_lines="4"
 class PostList(ListView):
-    model = Post
     template_name = "all_posts.html"
     context_object_name = "posts"
     paginate_by = 10
@@ -113,13 +113,14 @@ class PostList(ListView):
         return Post.objects.filter(published_at__lte=now).order_by("-published_at")
 ```
 
+The [Pagination docs](https://docs.djangoproject.com/en/6.1/topics/pagination/#paginating-a-listview) are a great place to see what's required in the template.
+
 ### I need extra data in the template. {#extra-context}
 
 This is not limited to the `ListView`, but most generic class-based views allow the passing of extra data to the template:
 
-```python hl_lines="6"
+```python hl_lines="5"
 class PostList(ListView):
-    model = Post
     template_name = "all_posts.html"
     context_object_name = "posts"
     paginate_by = 10
@@ -134,9 +135,8 @@ class PostList(ListView):
 
 Also not limited to the `ListView`, adding complex extra data to the template context is easy:
 
-```python hl_lines="8 9 10 11 12 13"
+```python hl_lines="7 8 9 10 11 12"
 class PostList(ListView):
-    model = Post
     template_name = "all_posts.html"
     context_object_name = "posts"
     paginate_by = 10
