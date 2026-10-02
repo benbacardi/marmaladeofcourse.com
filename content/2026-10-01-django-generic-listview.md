@@ -1,4 +1,4 @@
-title: Django's Generic Views: ListView
+title: Django’s Generic Views: ListView
 category: Development
 tags: Python, Django
 

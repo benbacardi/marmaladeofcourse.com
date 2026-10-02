@@ -1,4 +1,4 @@
-title: Django's Generic Views: DetailView
+title: Django’s Generic Views: DetailView
 category: Development
 tags: Python, Django
 
