@@ -167,6 +167,10 @@ blockquote {
   margin-bottom: 1rem;
 }
 
+blockquote ul:last-child {
+  margin-bottom: 0;
+}
+
 .post img {
   max-width: 100%;
   border-radius: 5px;

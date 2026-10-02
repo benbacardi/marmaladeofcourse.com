@@ -8,6 +8,11 @@ This post is going to focus on one of the most basic generic class-based views, 
 
 An excellent resource for diving deep into Django's class-based views is [Classy Class-Based Views](https://ccbv.co.uk/), which I highly recommend having a look through when you're ready to start piecing together how class-based views work under the hood.
 
+> #### Posts in this series
+>
+> * [`ListView`]({filename}2026-10-01-django-generic-listview.md) (this post)
+> * [`DetailView`]({filename}2026-10-02-django-generic-detailview.md)
+
 ---
 
 For the purposes of this post, we're going to assume a single model:
@@ -36,7 +41,7 @@ We'll cover the following attributes, if you want to jump straight to each secti
 At its most basic, Django's `ListView` will render a template with a list of instances of a particular model. Just two lines (beyond the import) is enough to get this functionality:
 
 ```python
-from django.views.generic.list import ListView
+from django.views.generic import ListView
 
 class PostList(ListView):
     model = Post
@@ -168,4 +173,3 @@ class PostList(ListView):
 ---
 
 This may become a series of posts working through the different generic class-based views that Django provides, but I will make no promises! For now, this should suffice as a quick reference for those wanting to easily customise the behaviour of `ListView` without reinventing the wheel.
-
