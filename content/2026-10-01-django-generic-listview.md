@@ -10,7 +10,7 @@ An excellent resource for diving deep into Django's class-based views is [Classy
 
 ---
 
-For the purposes of this post, we're going to assume a single custom model:
+For the purposes of this post, we're going to assume a single model:
 
 ```python
 class Post(models.Model):
@@ -19,6 +19,17 @@ class Post(models.Model):
     published_at = models.DateTimeField(null=True)
     is_featured = models.BooleanField(default=False)
 ```
+
+We'll cover the following attributes, if you want to jump straight to each section:
+
+* [`template_name`](#template-name)
+* [`context_object_name`](#context-object-name)
+* [`ordering`](#ordering)
+* [`queryset`](#queryset)
+* [`get_queryset()`](#get-queryset)
+* [`paginate_by`](#paginate-by)
+* [`extra_context`](#extra-context)
+* [`get_context_data()`](#get-context-data)
 
 ## The Simple `ListView`
 
@@ -96,7 +107,7 @@ class PostList(ListView):
         return Post.objects.filter(published_at__lte=now).order_by("-published_at")
 ```
 
-(Note that providing a `QuerySet` this way will ignore both the `queryset` and `ordering` attributes mentioned above, which is why we've included the ordering directly in the `get_queryset` method now.)
+Note that providing a `QuerySet` this way will ignore both the `queryset` and `ordering` attributes mentioned above, which is why we've included the ordering directly in the `get_queryset` method now. You can call `super().get_queryset()` if you want to use those attributes and just adjust the query set after, though.
 
 ### Too many posts are showing up! I only want ten. {#paginate-by}
 
