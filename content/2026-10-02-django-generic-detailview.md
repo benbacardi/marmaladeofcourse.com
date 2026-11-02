@@ -10,6 +10,7 @@ As a reminder, the site [Classy Class-Based Views](https://ccbv.co.uk/) is an in
 >
 > * [`ListView`]({filename}2026-10-01-django-generic-listview.md)
 > * [`DetailView`]({filename}2026-10-02-django-generic-detailview.md) (this post)
+> * [`TemplateView`]({filename}2026-11-02-django-generic-templateview.md)
 
 ---
 
@@ -43,6 +44,7 @@ At its most basic, Django's `DetailView` will render a template with the details
 
 ```python
 from django.views.generic import DetailView
+
 
 class PostDetail(DetailView):
     model = Post
@@ -198,14 +200,14 @@ class PostDetail(DetailView):
     slug_field = "title_slug"
     slug_url_kwarg = "title_slug"
     extra_context = {"section": "blog"}
-    
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["featured_posts"] = Post.objects.filter(
-            is_featured=true
-        ).order_by("-published_at")[:5]
+        context["featured_posts"] = Post.objects.filter(is_featured=true).order_by(
+            "-published_at"
+        )[:5]
         return context
-    
+
     def get_queryset(self):
         now = timezone.now()
         return Post.objects.filter(published_at__lte=now)

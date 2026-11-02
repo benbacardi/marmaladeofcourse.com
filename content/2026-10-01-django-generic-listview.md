@@ -12,6 +12,7 @@ An excellent resource for diving deep into Django's class-based views is [Classy
 >
 > * [`ListView`]({filename}2026-10-01-django-generic-listview.md) (this post)
 > * [`DetailView`]({filename}2026-10-02-django-generic-detailview.md)
+> * [`TemplateView`]({filename}2026-11-02-django-generic-templateview.md)
 
 ---
 
@@ -42,6 +43,7 @@ At its most basic, Django's `ListView` will render a template with a list of ins
 
 ```python
 from django.views.generic import ListView
+
 
 class PostList(ListView):
     model = Post
@@ -157,14 +159,14 @@ class PostList(ListView):
     context_object_name = "posts"
     paginate_by = 10
     extra_context = {"section": "blog"}
-    
+
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["featured_posts"] = Post.objects.filter(
-            is_featured=true
-        ).order_by("-published_at")[:5]
+        context["featured_posts"] = Post.objects.filter(is_featured=true).order_by(
+            "-published_at"
+        )[:5]
         return context
-    
+
     def get_queryset(self):
         now = timezone.now()
         return Post.objects.filter(published_at__lte=now).order_by("-published_at")
