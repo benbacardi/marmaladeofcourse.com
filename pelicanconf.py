@@ -67,4 +67,5 @@ STATIC_MANIFEST = {
     "syntax.css": file_hash("theme/static/css/syntax.css"),
     "style.css": file_hash("theme/static/css/style.css"),
     "drip.js": file_hash("theme/static/js/drip.js"),
+    "lightbox.js": file_hash("theme/static/js/lightbox.js"),
 }

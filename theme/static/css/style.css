@@ -318,6 +318,85 @@ pre code {
   margin-bottom: 0;
 }
 
+/* Lightbox */
+
+.lightbox-thumb {
+  cursor: zoom-in;
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--body-color), 0.92);
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 88vh;
+  object-fit: contain;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox button {
+  position: absolute;
+  background: none;
+  border: 0;
+  color: rgb(var(--background-color));
+  font-size: 3rem;
+  line-height: 1;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.lightbox button:hover,
+.lightbox button:focus-visible {
+  opacity: 1;
+  color: rgb(var(--marmalade));
+}
+
+.lightbox-close {
+  top: 0;
+  right: 0;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 0;
+}
+
+.lightbox-next {
+  right: 0;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgb(var(--background-color));
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
 .post-date {
   opacity: 0.5;
   font-style: italic;
