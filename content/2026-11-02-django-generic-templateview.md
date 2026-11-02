@@ -1,6 +1,7 @@
 title: Django’s Generic Views: TemplateView
 category: Development
 tags: Python, Django
+image: /assets/django-cbv-template.png
 
 Next in my series on Django's generic class-based views is the simple `TemplateView`, a view whose responsibility lies solely in rendering a template.
 

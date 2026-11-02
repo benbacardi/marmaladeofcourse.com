@@ -1,6 +1,7 @@
 title: Django’s Generic Views: DetailView
 category: Development
 tags: Python, Django
+image: /assets/django-cbv-detail.png
 
 Continuing from my previous post on Django's [generic `ListView`]({filename}2026-10-01-django-generic-listview.md), this article will instead cover the available customisation of the `DetailView`. Some options (like ordering and pagination) aren't available for this view, but there are a few others that are different.
 

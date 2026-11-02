@@ -1,6 +1,7 @@
 title: Django’s Generic Views: ListView
 category: Development
 tags: Python, Django
+image: /assets/django-cbv-list.png
 
 Django's class-based views are very divisive; some people swear by them, others won't touch them with a barge pole and will stick entirely to function-based views. I'm not going to weigh in on that debate, but one thing I do think is that Django's documentation around their *generic* class-based views is not particularly great. There are no tutorials that show you how to use them, and only [reference pages that list some of their properties](https://docs.djangoproject.com/en/6.1/ref/class-based-views/generic-display/#listview) without any real guidance on what they do.
 
