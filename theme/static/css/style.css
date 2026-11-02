@@ -314,6 +314,10 @@ pre code {
   float: right;
 }
 
+.img-grid p {
+  margin-bottom: 0;
+}
+
 .post-date {
   opacity: 0.5;
   font-style: italic;

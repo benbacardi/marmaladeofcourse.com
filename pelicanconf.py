@@ -42,6 +42,7 @@ MARKDOWN = {
             "css_class": "highlight",
         },
         "markdown.extensions.meta": {},
+        "markdown.extensions.md_in_html": {},
         "smarty": {"smart_angled_quotes": "true"},
         "markdown.extensions.toc": {
             "permalink": "true",
