@@ -14,6 +14,7 @@ An excellent resource for diving deep into Django's class-based views is [Classy
 > * [`ListView`]({filename}2026-10-01-django-generic-listview.md) (this post)
 > * [`DetailView`]({filename}2026-10-02-django-generic-detailview.md)
 > * [`TemplateView`]({filename}2026-11-02-django-generic-templateview.md)
+> * [`FormView`]({filename}2026-11-03-django-generic-formview.md)
 
 ---
 

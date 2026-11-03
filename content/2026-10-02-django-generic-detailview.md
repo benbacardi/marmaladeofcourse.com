@@ -12,6 +12,7 @@ As a reminder, the site [Classy Class-Based Views](https://ccbv.co.uk/) is an in
 > * [`ListView`]({filename}2026-10-01-django-generic-listview.md)
 > * [`DetailView`]({filename}2026-10-02-django-generic-detailview.md) (this post)
 > * [`TemplateView`]({filename}2026-11-02-django-generic-templateview.md)
+> * [`FormView`]({filename}2026-11-03-django-generic-formview.md)
 
 ---
 
